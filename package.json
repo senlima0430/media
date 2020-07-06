@@ -1,0 +1,14 @@
+{
+  "name": "media",
+  "version": "0.0.0",
+  "main": "index.js",
+  "repository": "https://github.com/senlima0430/media.git",
+  "author": "Senlima Sun <senlima0430@gmail.com>",
+  "license": "MIT",
+  "private": true,
+  "workspaces": {
+    "packages": [
+      "packages/*"
+    ]
+  }
+}
