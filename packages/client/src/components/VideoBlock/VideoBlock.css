@@ -1,0 +1,12 @@
+.video-block__video {
+  position: relative;
+  flex: none;
+  width: 360px;
+}
+
+.video-block__video::before {
+  display: block;
+  content: '';
+  width: 100%;
+  padding-top: 56.25%;
+}

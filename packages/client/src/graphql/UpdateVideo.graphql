@@ -1,0 +1,3 @@
+mutation updateVideo($id: UUID!, $title: String, $description: String) {
+  updateVideo(id: $id, title: $title, description: $description)
+}

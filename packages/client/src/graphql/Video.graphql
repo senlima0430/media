@@ -1,0 +1,8 @@
+query video($id: UUID!) {
+  video(id: $id) {
+    title
+    description
+    filePath
+    thumbnailPath
+  }
+}

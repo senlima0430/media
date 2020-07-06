@@ -1,0 +1,10 @@
+query videos {
+  videos {
+    id
+    title
+    description
+    filePath
+    thumbnailPath
+    createdAt
+  }
+}
