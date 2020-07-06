@@ -1,0 +1,32 @@
+type Query {
+  probe: String!
+  video(id: UUID!): Video
+  videos: [Video]
+}
+
+scalar Date
+
+scalar UUID
+
+scalar Upload
+
+type Video {
+  id: UUID!
+  title: String!
+  description: String
+  filePath: String!
+  thumbnailPath: String!
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Mutation {
+  createVideo(file: Upload!): Video
+  updateVideo(id: UUID!, title: String, description: String): Boolean
+  deleteVideo(id: UUID!): Boolean
+}
+
+schema {
+  query: Query
+  mutation: Mutation
+}

@@ -1,0 +1,20 @@
+type Video {
+  id: UUID!
+  title: String!
+  description: String
+  filePath: String!
+  thumbnailPath: String!
+  createdAt: Date!
+  updatedAt: Date!
+}
+
+type Query {
+  video(id: UUID!): Video
+  videos: [Video]
+}
+
+type Mutation {
+  createVideo(file: Upload!): Video
+  updateVideo(id: UUID!, title: String, description: String): Boolean
+  deleteVideo(id: UUID!): Boolean
+}
