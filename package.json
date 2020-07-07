@@ -6,9 +6,7 @@
   "author": "Senlima Sun <senlima0430@gmail.com>",
   "license": "MIT",
   "private": true,
-  "workspaces": {
-    "packages": [
-      "packages/*"
-    ]
-  }
+  "workspaces": [
+    "packages/*"
+  ]
 }
