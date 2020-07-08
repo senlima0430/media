@@ -9,6 +9,7 @@ import {
   CardContent,
   CardActions,
   TextField,
+  Skeleton,
 } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
@@ -24,6 +25,14 @@ const useStyles = makeStyles(theme => ({
     background: 'transparent',
     [theme.breakpoints.down('xs')]: {
       flexWrap: 'wrap',
+    },
+  },
+  cardMedia: {
+    flex: 'none',
+    width: '360px',
+    height: '100%',
+    [theme.breakpoints.down('xs')]: {
+      width: '100%',
     },
   },
   cardContent: {
@@ -42,6 +51,30 @@ const useStyles = makeStyles(theme => ({
     marginBottom: theme.spacing(2),
   },
 }))
+
+export const VideoBlockSkeleton = () => {
+  const classes = useStyles()
+
+  return (
+    <Card className={classes.card} square elevation={0}>
+      <Skeleton
+        className={classes.cardMedia}
+        variant="rect"
+        width={360}
+        height={202}
+      />
+
+      <div className={classes.fileInfo}>
+        <Typography variant="h5" gutterBottom>
+          <Skeleton variant="text" />
+        </Typography>
+        <Typography variant="subtitle1">
+          <Skeleton variant="text" />
+        </Typography>
+      </div>
+    </Card>
+  )
+}
 
 export const VideoBlock = ({
   id,

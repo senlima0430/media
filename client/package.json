@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "license": "MIT",
   "scripts": {
-    "lint": "eslint src/**/*.jsx",
+    "lint": "eslint ./src",
     "build": "webpack --mode production --config ./webpack/webpack.prod.js",
     "dev": "NODE_ENV=development webpack-dev-server --config ./webpack/webpack.dev.js"
   },
@@ -53,6 +53,7 @@
     "eslint-import-resolver-webpack": "^0.12.1",
     "eslint-loader": "^3.0.3",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.18.0",
     "eslint-plugin-jsx-a11y": "^6.2.3",
     "eslint-plugin-prettier": "^3.1.2",
     "eslint-plugin-react": "^7.18.3",
@@ -74,69 +75,6 @@
     "webpack-dev-server": "^3.10.3",
     "webpack-manifest-plugin": "^2.2.0",
     "webpack-merge": "^4.2.2"
-  },
-  "prettier": {
-    "semi": false,
-    "tabWidth": 2,
-    "printWidth": 79,
-    "useTabs": false,
-    "endOfLine": "lf",
-    "singleQuote": true,
-    "arrowParens": "avoid",
-    "trailingComma": "es5",
-    "bracketSpacing": true,
-    "jsxSingleQuote": false,
-    "jsxBracketSameLine": false
-  },
-  "eslintConfig": {
-    "parser": "babel-eslint",
-    "parserOptions": {
-      "ecmaFeatures": {
-        "jsx": true
-      }
-    },
-    "env": {
-      "browser": true,
-      "jest": true,
-      "es6": true
-    },
-    "extends": [
-      "airbnb",
-      "plugin:jsx-a11y/recommended",
-      "prettier",
-      "prettier/react"
-    ],
-    "plugins": [
-      "jsx-a11y",
-      "react-hooks",
-      "prettier"
-    ],
-    "rules": {
-      "react/jsx-filename-extension": 0,
-      "react-hooks/rules-of-hooks": "error",
-      "react-hooks/exhaustive-deps": "warn",
-      "import/prefer-default-export": 0,
-      "import/no-extraneous-dependencies": [
-        "error",
-        {
-          "devDependencies": true
-        }
-      ]
-    },
-    "globals": {
-      "document": false
-    },
-    "settings": {
-      "import/resolver": {
-        "webpack": {
-          "config": "webpack/webpack.common.js"
-        }
-      }
-    },
-    "ignorePatterns": [
-      "dist/",
-      "webpack.*.js"
-    ]
   },
   "browserslist": [
     ">1%",

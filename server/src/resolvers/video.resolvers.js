@@ -39,7 +39,6 @@ export default {
 
         return result
       } catch {
-        fs.removeSync(folderPath)
         return new ApolloError('Failed to create video')
       }
     },

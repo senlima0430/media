@@ -7,6 +7,16 @@
   "license": "MIT",
   "private": true,
   "workspaces": [
-    "packages/*"
-  ]
+    "client",
+    "server"
+  ],
+  "scripts": {
+    "lint": "yarn workspaces run lint",
+    "dev": "concurrently --names 'server,client' 'yarn workspace server run dev' 'yarn workspace client run dev'"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "eslint": "^7.4.0",
+    "prettier": "^2.0.5"
+  }
 }

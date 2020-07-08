@@ -1,10 +1,9 @@
 import React, { Fragment } from 'react'
-import { Grid, Typography, Card } from '@material-ui/core'
-import { Skeleton } from '@material-ui/lab'
+import { Grid, Typography } from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import { useQuery } from '@apollo/react-hooks'
 
-import { VideoBlock } from '../VideoBlock'
+import { VideoBlock, VideoBlockSkeleton } from '../VideoBlock'
 import VIDEOS from '../../graphql/Videos.graphql'
 import emptyImage from '../../assets/emptyImage.png'
 
@@ -15,14 +14,6 @@ const useStyles = makeStyles(theme => ({
     background: 'transparent',
     [theme.breakpoints.down('xs')]: {
       flexWrap: 'wrap',
-    },
-  },
-  cardMedia: {
-    flex: 'none',
-    width: '360px',
-    height: '100%',
-    [theme.breakpoints.down('xs')]: {
-      width: '100%',
     },
   },
   cardContent: {
@@ -61,23 +52,7 @@ export const VideoList = () => {
   if (loading)
     return (
       <Grid item xs={12}>
-        <Card className={classes.card} square elevation={0}>
-          <Skeleton
-            className={classes.cardMedia}
-            variant="rect"
-            width={360}
-            height={202}
-          />
-
-          <div className={classes.fileInfo}>
-            <Typography variant="h5" gutterBottom>
-              <Skeleton variant="text" />
-            </Typography>
-            <Typography variant="subtitle1">
-              <Skeleton variant="text" />
-            </Typography>
-          </div>
-        </Card>
+        <VideoBlockSkeleton />
       </Grid>
     )
 
